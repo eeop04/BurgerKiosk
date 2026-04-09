@@ -58,7 +58,7 @@
             // 
             btnOrder.BackColor = Color.Lime;
             btnOrder.ForeColor = Color.White;
-            btnOrder.Location = new Point(23, 326);
+            btnOrder.Location = new Point(73, 329);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(113, 52);
             btnOrder.TabIndex = 0;
@@ -89,6 +89,7 @@
             rdoHamBurger.TabStop = true;
             rdoHamBurger.Text = "햄버거";
             rdoHamBurger.UseVisualStyleBackColor = true;
+            rdoHamBurger.CheckedChanged += rdoHamBurger_CheckedChanged;
             // 
             // rdoBulgogiBurger
             // 
@@ -102,6 +103,7 @@
             rdoBulgogiBurger.TabStop = true;
             rdoBulgogiBurger.Text = "불고기 버거";
             rdoBulgogiBurger.UseVisualStyleBackColor = true;
+            rdoBulgogiBurger.CheckedChanged += rdoBulgogiBurger_CheckedChanged;
             // 
             // rdoChickenBurger
             // 
@@ -115,6 +117,7 @@
             rdoChickenBurger.TabStop = true;
             rdoChickenBurger.Text = "치킨 버거";
             rdoChickenBurger.UseVisualStyleBackColor = true;
+            rdoChickenBurger.CheckedChanged += rdoChickenBurger_CheckedChanged;
             // 
             // pictureBox1
             // 
@@ -234,7 +237,7 @@
             grpList.ForeColor = Color.Red;
             grpList.Location = new Point(548, 91);
             grpList.Name = "grpList";
-            grpList.Size = new Size(270, 396);
+            grpList.Size = new Size(506, 396);
             grpList.TabIndex = 15;
             grpList.TabStop = false;
             grpList.Text = "주문 내역";
@@ -242,10 +245,11 @@
             // lblTotalCost
             // 
             lblTotalCost.AutoSize = true;
-            lblTotalCost.ForeColor = Color.Black;
-            lblTotalCost.Location = new Point(19, 271);
+            lblTotalCost.Font = new Font("맑은 고딕", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            lblTotalCost.ForeColor = Color.Blue;
+            lblTotalCost.Location = new Point(13, 266);
             lblTotalCost.Name = "lblTotalCost";
-            lblTotalCost.Size = new Size(117, 38);
+            lblTotalCost.Size = new Size(118, 38);
             lblTotalCost.TabIndex = 2;
             lblTotalCost.Text = "총 금액:";
             lblTotalCost.Click += lblTotalCost_Click;
@@ -254,7 +258,7 @@
             // 
             btnClear.BackColor = Color.Red;
             btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(142, 326);
+            btnClear.Location = new Point(229, 329);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(113, 52);
             btnClear.TabIndex = 1;
@@ -265,9 +269,9 @@
             // lstOrder
             // 
             lstOrder.FormattingEnabled = true;
-            lstOrder.Location = new Point(23, 52);
+            lstOrder.Location = new Point(17, 52);
             lstOrder.Name = "lstOrder";
-            lstOrder.Size = new Size(232, 189);
+            lstOrder.Size = new Size(356, 189);
             lstOrder.TabIndex = 0;
             lstOrder.SelectedIndexChanged += lstOrder_SelectedIndexChanged;
             // 
@@ -275,7 +279,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(865, 515);
+            ClientSize = new Size(1066, 515);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(label1);

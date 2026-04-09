@@ -5,10 +5,31 @@ namespace BurgerKiosk
         public Form1()
         {
             InitializeComponent();
+            rdoHamBurger.Checked = false;
+            rdoBulgogiBurger.Checked = false;
+            rdoChickenBurger.Checked = false;
+        }
+
+        protected override void OnShown(EventArgs e)
+        {
+            base.OnShown(e);
+
+            rdoHamBurger.Checked = false;
+            rdoBulgogiBurger.Checked = false;
+            rdoChickenBurger.Checked = false;
+
+            this.ActiveControl = null; 
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
+            if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
+            {
+                lblTotalCost.ForeColor = Color.Red;
+                lblTotalCost.Text = "메인 메뉴 하나 이상 선택해주세요.";
+                return;
+            }
+
             int totalCost = 0;
 
             if (rdoHamBurger.Checked)
@@ -47,7 +68,8 @@ namespace BurgerKiosk
                 lstOrder.Items.Add("소스 추가 500원");
                 totalCost += 500;
             }
-            lblTotalCost.Text = "총 금액: " + totalCost + "원";
+            lblTotalCost.ForeColor = Color.Blue;
+            lblTotalCost.Text = "총 금액: " + totalCost.ToString("#,##0") + "원";
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -61,6 +83,7 @@ namespace BurgerKiosk
             chkSauce.Checked = false;
 
             lstOrder.Items.Clear();
+            lblTotalCost.ForeColor = Color.Black;
             lblTotalCost.Text = "총 금액 : 0원";
         }
         private void lblTotalCost_Click(object sender, EventArgs e)
@@ -69,6 +92,21 @@ namespace BurgerKiosk
         }
 
         private void lstOrder_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdoHamBurger_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdoBulgogiBurger_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdoChickenBurger_CheckedChanged(object sender, EventArgs e)
         {
 
         }
